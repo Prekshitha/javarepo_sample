@@ -1,0 +1,136 @@
+
+Java Collection Framework
+-------------------------
+
+          Collection <interface>
+  -------------------------------------
+  List <interface>       Set <interface>     Queue <interface>
+
+    ArrayList              HashSet			LinkedList
+    Vector                 SortedSet <interface>	ProprityQueue
+    LinkedList                  TreeSet
+
+
+     Map <interface>
+-----------------------
+     HashMap
+     SortedMap <interface>
+     TreeMap  
+
+
+Case Study:
+
+Take one by one books information and store until option given as NO
+
+
+Take integers from user one by one until 0 is pressed. No duplicate is to be allowed.  Show all data as well as their sum and avg also.
+
+
+
+Take integers from user one by one until 0 is pressed. No duplicate is to be allowed.  Show all data in asc order as well as their sum and avg also.
+
+
+-------------------------------------------------------
+Java HashSet class is used to create a collection that uses a hash table for storage. 
+
+HashSet stores the elements by using a mechanism called hashing.
+contains unique elements only.
+allows null value.
+non synchronized.
+doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+HashSet is the best approach for search operations.
+-----------
+Java TreeSet class is used to create a collection that stores object in ascending order for storage.
+
+--- Map -----
+HashMap class
+------------------
+Java HashMap class implements the map interface by using a hash table. 
+It inherits AbstractMap class and implements Map interface.
+
+	public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable  
+*****
+contains values based on the key.
+contains only unique keys.
+may have one null key and multiple null values.
+non synchronized.
+maintains no order.
+
+
+--- sorting collections ----
+
+
+@Override
+public int compareTo(Book o) {
+		return this.getBookName().compareTo(o.getBookName());
+	}
+
+
+Collections.sort(bookList);
+
+Hashtable class
+----------------
+Java Hashtable class implements a hashtable, which maps keys to values. 
+It inherits Dictionary class and implements the Map interface.
+public class Hashtable<K,V> extends Dictionary<K,V> implements Map<K,V>,Cloneable, Serializable 
+
+*****
+A Hashtable is an array of a list. Each list is known as a bucket. The position of the bucket is identified by calling the hashcode() method. A Hashtable contains values based on the key.
+It contains unique elements.
+It doesn't allow null key or value.
+It is synchronized, so threadsafe.
+
+
+
+Difference between Comparator and Comparable 
+-----------------
+Comparble interface can be used to provide single way of sorting list of objects where as Compartor interface is used to provide different ways of sorting.
+
+For Comparble, the class needs to implement it and override compareto() method.
+
+But Compartor,we dont need to make any change in the class amd we create sperate class by implementing this interface and override method compare().
+
+Comparble from java.lang and Comparator from java.util   packages.
+
+
+
+
+
+
+
+
+
+Being an interface the queue needs a concrete class for the declaration and the most common classes are the PriorityQueue and LinkedList in Java.
+
+add()- This method is used to add elements at the tail of queue. More specifically, at the last of linked-list if it is used, or according to the priority in case of priority queue implementation.
+
+peek()- This method is used to view the head of queue without removing it. It returns Null if the queue is empty.
+
+element()- This method is similar to peek(). It throws NoSuchElementException when the queue is empty.
+
+remove()- This method removes and returns the head of the queue. It throws NoSuchElementException when the queue is empty.
+
+poll()- This method removes and returns the head of the queue. It returns null if the queue is empty.
+
+size()- This method return the no. of elements in the queue.
+
+
+Queue<Integer> q = new LinkedList<>(); 
+  
+    for (int i=0; i<5; i++) 
+     q.add(i); 
+  
+    System.out.println("Elements of queue-"+q); 
+  
+    int removedele = q.remove(); 
+    System.out.println("removed element-" + removedele); 
+  
+    System.out.println(q); 
+  
+    int head = q.peek(); 
+    System.out.println("head of queue-" + head); 
+  
+    int size = q.size(); 
+    System.out.println("Size of queue-" + size); 
+  } 
+} 
